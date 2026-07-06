@@ -281,28 +281,29 @@
   .package .label{font-size:13px; color:var(--ink-soft); margin-top:4px;}
 
   /* ---------- TESTIMONIALS ---------- */
-  .testimonial-placeholder{
-    border:1px dashed var(--line); border-radius:var(--radius);
-    padding:48px; text-align:center; color:var(--ink-soft);
-    background:var(--blue-tint);
-  }
-  .testimonial-placeholder .mono{color:var(--blue); font-size:14px;}
+<section id="testimonials">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Student Testimonial</div>
+      <h2>What students are saying</h2>
+      <p>Helping students build confidence and understanding is my top priority.</p>
+    </div>
 
-  /* ---------- FAQ ---------- */
-  .faq-item{
-    border-bottom:1px solid var(--line);
-  }
-  .faq-item summary{
-    padding:20px 4px; cursor:pointer; font-weight:600; font-size:16px;
-    list-style:none; display:flex; align-items:center; justify-content:space-between;
-  }
-  .faq-item summary::-webkit-details-marker{display:none;}
-  .faq-item summary::after{
-    content:"+"; font-family:'IBM Plex Mono', monospace; font-size:20px; color:var(--blue);
-    transition:transform .15s;
-  }
-  .faq-item[open] summary::after{transform:rotate(45deg);}
-  .faq-item p{padding:0 4px 20px; color:var(--ink-soft); margin:0; font-size:15px;}
+    <div class="why-card" style="max-width:800px; margin:auto;">
+      <p style="font-size:18px; font-style:italic; line-height:1.8;">
+        "Rise Tutoring has helped me grow as a student, teaching me how to
+        analyze problems carefully and truly understand what I'm doing.
+        Even when I don't understand something, Abe is always patient and
+        takes the time to explain it in a way that makes sense."
+      </p>
+
+      <div style="margin-top:24px;">
+        <strong>— Benson</strong><br>
+        <span style="color:var(--ink-soft);">Algebra I Student</span>
+      </div>
+    </div>
+  </div>
+</section>
 
   /* ---------- CONTACT ---------- */
   .contact-band{background:var(--blue-tint);}
