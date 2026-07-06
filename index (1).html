@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rise Math Tutoring | Personalized 1-on-1 Math Tutoring</title>
+<meta name="description" content="Personalized one-on-one math tutoring from a high-achieving student tutor. Build confidence, master math, and see real progress — book a free consultation today.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg: #ffffff;
+    --ink: #172233;
+    --ink-soft: #5b6778;
+    --line: #e4e9f1;
+    --blue: #2955a8;
+    --blue-deep: #1c3d80;
+    --blue-tint: #eef3fc;
+    --blue-tint-2: #dfe9fa;
+    --radius: 18px;
+    --max: 1120px;
+    --shadow: 0 1px 2px rgba(23,34,51,0.04), 0 8px 24px -12px rgba(23,34,51,0.10);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    color:var(--ink);
+    background:var(--bg);
+    font-family:'Inter', sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family:'Sora', sans-serif;
+    line-height:1.15;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  .mono{
+    font-family:'IBM Plex Mono', monospace;
+  }
+  a{color:inherit;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 24px;}
+  section{padding:96px 0;}
+  @media (max-width:720px){ section{padding:64px 0;} }
+
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--blue);
+    margin-bottom:14px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:22px; height:1px;
+    background:var(--blue);
+    display:inline-block;
+  }
+
+  /* ---------- NAV ---------- */
+  header.site-nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(255,255,255,0.86);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:var(--max); margin:0 auto; padding:16px 24px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .brand{
+    font-family:'Sora', sans-serif;
+    font-weight:700;
+    font-size:19px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .brand-mark{
+    width:30px; height:30px; border-radius:8px;
+    background:var(--blue);
+    color:#fff; display:flex; align-items:center; justify-content:center;
+    font-family:'IBM Plex Mono', monospace; font-size:15px; font-weight:600;
+  }
+  nav.links{display:flex; gap:28px; font-size:15px; font-weight:500;}
+  nav.links a{text-decoration:none; color:var(--ink-soft); transition:color .15s;}
+  nav.links a:hover{color:var(--blue);}
+  .nav-cta{
+    background:var(--blue); color:#fff; padding:10px 18px;
+    border-radius:999px; font-size:14px; font-weight:600;
+    text-decoration:none; white-space:nowrap;
+    transition:background .15s, transform .15s;
+  }
+  .nav-cta:hover{background:var(--blue-deep);}
+  .menu-toggle{display:none;}
+  @media (max-width:860px){
+    nav.links{display:none;}
+    .menu-toggle{display:block; background:none; border:1px solid var(--line); border-radius:10px; padding:8px 12px; font-size:20px; line-height:1;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    padding:100px 0 80px;
+    overflow:hidden;
+    background:
+      linear-gradient(180deg, var(--blue-tint) 0%, #ffffff 78%);
+  }
+  .hero::before{
+    /* graph-paper grid signature */
+    content:"";
+    position:absolute; inset:0;
+    background-image:
+      linear-gradient(to right, rgba(41,85,168,0.07) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(41,85,168,0.07) 1px, transparent 1px);
+    background-size:34px 34px;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, black 40%, transparent 85%);
+    pointer-events:none;
+  }
+  .hero-grid{
+    position:relative;
+    display:grid; grid-template-columns:1.1fr 0.9fr; gap:56px; align-items:center;
+  }
+  @media (max-width:900px){ .hero-grid{grid-template-columns:1fr;} }
+
+  .hero h1{font-size:clamp(34px, 5vw, 54px); font-weight:800; color:var(--ink);}
+  .hero h1 .accent{color:var(--blue);}
+  .hero p.sub{
+    font-size:18px; color:var(--ink-soft); max-width:52ch; margin:20px 0 32px;
+  }
+  .btn-primary{
+    display:inline-flex; align-items:center; gap:10px;
+    background:var(--blue); color:#fff; font-weight:600; font-size:16px;
+    padding:15px 26px; border-radius:12px; text-decoration:none;
+    box-shadow: var(--shadow);
+    transition:background .15s, transform .15s;
+    border:none; cursor:pointer;
+  }
+  .btn-primary:hover{background:var(--blue-deep); transform:translateY(-1px);}
+  .hero-note{
+    margin-top:16px; font-size:14px; color:var(--ink-soft);
+  }
+
+  .hero-photo{
+    position:relative;
+    border-radius:24px;
+    overflow:hidden;
+    aspect-ratio:4/5;
+    background:var(--blue-tint-2);
+    border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:var(--shadow);
+  }
+  .hero-photo .placeholder-txt{
+    text-align:center; color:var(--blue-deep); padding:24px;
+    font-family:'IBM Plex Mono', monospace; font-size:13px; line-height:1.7;
+  }
+  .hero-photo svg{width:56%; opacity:0.9;}
+  .margin-note{
+    position:absolute;
+    font-family:'IBM Plex Mono', monospace;
+    color:var(--blue);
+    opacity:0.35;
+    font-size:15px;
+    transform:rotate(-6deg);
+    pointer-events:none;
+  }
+  .m1{top:12%; left:-6%;}
+  .m2{bottom:8%; right:-4%; transform:rotate(5deg);}
+
+  /* ---------- WHY CHOOSE ---------- */
+  .section-head{
+    max-width:640px; margin-bottom:48px;
+  }
+  .section-head h2{font-size:clamp(26px,3.6vw,36px); font-weight:700;}
+  .section-head p{color:var(--ink-soft); font-size:17px; margin-top:12px;}
+
+  .why-grid{
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:20px;
+  }
+  @media (max-width:860px){ .why-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:560px){ .why-grid{grid-template-columns:1fr;} }
+  .why-card{
+    border:1px solid var(--line); border-radius:var(--radius);
+    padding:26px 22px; background:#fff;
+    transition:box-shadow .15s, transform .15s;
+  }
+  .why-card:hover{box-shadow:var(--shadow); transform:translateY(-2px);}
+  .why-icon{
+    width:42px; height:42px; border-radius:11px; background:var(--blue-tint);
+    display:flex; align-items:center; justify-content:center; margin-bottom:16px;
+    color:var(--blue);
+  }
+  .why-card h3{font-size:17px; font-weight:600; margin-bottom:8px;}
+  .why-card p{font-size:14.5px; color:var(--ink-soft); margin:0;}
+
+  /* ---------- SUBJECTS ---------- */
+  .subjects-band{ background:var(--blue-tint); }
+  .subj-grid{
+    display:grid; grid-template-columns:repeat(4, 1fr); gap:18px;
+  }
+  @media (max-width:900px){ .subj-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:520px){ .subj-grid{grid-template-columns:1fr;} }
+  .subj-card{
+    background:#fff; border-radius:var(--radius); padding:22px;
+    border:1px solid var(--line);
+  }
+  .subj-card.optional{ border-style:dashed; }
+  .subj-card h3{font-size:16px; font-weight:700; margin-bottom:12px;}
+  .subj-card .tag{
+    display:inline-block; font-family:'IBM Plex Mono', monospace; font-size:11px;
+    background:var(--blue-tint-2); color:var(--blue-deep); padding:2px 8px;
+    border-radius:999px; margin-bottom:10px; font-weight:600;
+  }
+  .subj-card ul{margin:0; padding-left:18px; color:var(--ink-soft); font-size:14px;}
+  .subj-card li{margin-bottom:4px;}
+
+  /* ---------- HOW IT WORKS ---------- */
+  .steps{
+    display:grid; grid-template-columns:repeat(5,1fr); gap:16px;
+    counter-reset:step;
+  }
+  @media (max-width:920px){ .steps{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:560px){ .steps{grid-template-columns:1fr;} }
+  .step{
+    position:relative; padding:26px 18px 20px; border-radius:var(--radius);
+    border:1px solid var(--line);
+  }
+  .step .num{
+    font-family:'IBM Plex Mono', monospace; font-weight:600; font-size:13px;
+    color:var(--blue); background:var(--blue-tint); width:30px; height:30px;
+    border-radius:50%; display:flex; align-items:center; justify-content:center;
+    margin-bottom:14px;
+  }
+  .step h3{font-size:15.5px; font-weight:600; margin-bottom:6px;}
+  .step p{font-size:13.5px; color:var(--ink-soft); margin:0;}
+  .step-connector{
+    display:none;
+  }
+  @media (min-width:921px){
+    .step:not(:last-child)::after{
+      content:"";
+      position:absolute; top:41px; right:-18px; width:16px; height:1px;
+      background:var(--line);
+    }
+  }
+
+  /* ---------- PRICING ---------- */
+  .pricing-grid{
+    display:grid; grid-template-columns:1fr 1.15fr; gap:24px; align-items:stretch;
+  }
+  @media (max-width:820px){ .pricing-grid{grid-template-columns:1fr;} }
+  .price-card{
+    border:1px solid var(--line); border-radius:var(--radius); padding:30px;
+    background:#fff;
+  }
+  .price-hero{
+    background:var(--ink); color:#fff; display:flex; flex-direction:column; justify-content:center;
+  }
+  .price-hero .amount{
+    font-family:'IBM Plex Mono', monospace; font-size:44px; font-weight:600;
+  }
+  .price-hero .amount span{font-size:16px; font-weight:500; opacity:0.7;}
+  .price-hero p{opacity:0.75; font-size:14px; margin-top:8px;}
+  .packages{display:grid; grid-template-columns:repeat(3,1fr); gap:14px;}
+  @media (max-width:520px){ .packages{grid-template-columns:1fr;} }
+  .package{
+    border:1px solid var(--line); border-radius:14px; padding:18px; text-align:center;
+  }
+  .package .n{font-family:'IBM Plex Mono', monospace; font-size:26px; font-weight:600; color:var(--blue);}
+  .package .label{font-size:13px; color:var(--ink-soft); margin-top:4px;}
+
+  /* ---------- TESTIMONIALS ---------- */
+  .testimonial-placeholder{
+    border:1px dashed var(--line); border-radius:var(--radius);
+    padding:48px; text-align:center; color:var(--ink-soft);
+    background:var(--blue-tint);
+  }
+  .testimonial-placeholder .mono{color:var(--blue); font-size:14px;}
+
+  /* ---------- FAQ ---------- */
+  .faq-item{
+    border-bottom:1px solid var(--line);
+  }
+  .faq-item summary{
+    padding:20px 4px; cursor:pointer; font-weight:600; font-size:16px;
+    list-style:none; display:flex; align-items:center; justify-content:space-between;
+  }
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary::after{
+    content:"+"; font-family:'IBM Plex Mono', monospace; font-size:20px; color:var(--blue);
+    transition:transform .15s;
+  }
+  .faq-item[open] summary::after{transform:rotate(45deg);}
+  .faq-item p{padding:0 4px 20px; color:var(--ink-soft); margin:0; font-size:15px;}
+
+  /* ---------- CONTACT ---------- */
+  .contact-band{background:var(--blue-tint);}
+  .contact-grid{
+    display:grid; grid-template-columns:0.9fr 1.1fr; gap:48px;
+  }
+  @media (max-width:900px){ .contact-grid{grid-template-columns:1fr;} }
+  .contact-side h2{font-size:28px; font-weight:700;}
+  .contact-side p{color:var(--ink-soft); margin-top:14px; font-size:16px;}
+  .contact-detail{
+    margin-top:28px; display:flex; flex-direction:column; gap:14px; font-size:15px;
+  }
+  .contact-detail div{display:flex; gap:10px; align-items:center;}
+
+  form.contact-form{
+    background:#fff; border-radius:var(--radius); padding:32px;
+    border:1px solid var(--line); box-shadow:var(--shadow);
+  }
+  .form-row{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  @media (max-width:560px){ .form-row{grid-template-columns:1fr;} }
+  .field{margin-bottom:18px;}
+  .field label{
+    display:block; font-size:13px; font-weight:600; margin-bottom:6px; color:var(--ink);
+  }
+  .field input, .field select, .field textarea{
+    width:100%; padding:11px 13px; border:1px solid var(--line); border-radius:10px;
+    font-family:'Inter', sans-serif; font-size:14.5px; color:var(--ink);
+    background:#fbfcfe;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus{
+    outline:2px solid var(--blue); outline-offset:1px; border-color:var(--blue);
+  }
+  .field textarea{resize:vertical; min-height:90px;}
+  .form-status{font-size:14px; margin-top:12px; display:none;}
+  .form-status.show{display:block;}
+  .form-status.ok{color:#166534;}
+  .form-status.err{color:#b91c1c;}
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    border-top:1px solid var(--line); padding:40px 0; color:var(--ink-soft); font-size:14px;
+  }
+  .footer-inner{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;}
+
+  @media (prefers-reduced-motion: reduce){
+    *{scroll-behavior:auto !important; transition:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a href="#home" class="brand" style="text-decoration:none; color:inherit;">
+      <span class="brand-mark">∑</span>
+      Rise Math Tutoring
+    </a>
+    <nav class="links">
+      <a href="#why">Why Me</a>
+      <a href="#subjects">Subjects</a>
+      <a href="#how">How It Works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a href="#contact" class="nav-cta">Book a Free Consultation</a>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="home">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">1-on-1 Math Tutoring</div>
+      <h1>Build Confidence. <span class="accent">Master Math.</span></h1>
+      <p class="sub">
+        Personalized one-on-one tutoring from a high-achieving student who
+        understands how to explain difficult concepts clearly — for
+        elementary math through Algebra, Geometry, and beyond.
+      </p>
+      <a href="#contact" class="btn-primary">Book a Free Consultation →</a>
+      <div class="hero-note">No commitment · 20-minute call · Diagnostic included</div>
+    </div>
+    <div class="hero-photo">
+      <span class="margin-note m1">x² + 3x − 4 = 0</span>
+      <span class="margin-note m2">a² + b² = c²</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY CHOOSE ================= -->
+<section id="why">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Why Choose Me</div>
+      <h2>Tutoring built around how your child actually learns</h2>
+      <p>Every session is tailored — not a one-size-fits-all worksheet, but a plan built around where your child is right now.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">◆</div>
+        <h3>Personalized lessons</h3>
+        <p>Every plan is built around your child's specific gaps and goals — not a generic curriculum.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">◇</div>
+        <h3>Patient explanations</h3>
+        <p>We go at your child's pace, explaining concepts in multiple ways until they truly click.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">✎</div>
+        <h3>Homework help</h3>
+        <p>Stuck on tonight's assignment? Sessions can flex to cover current classwork too.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">✓</div>
+        <h3>Test preparation</h3>
+        <p>Targeted review before quizzes, exams, and standardized tests, with practice under real conditions.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">↗</div>
+        <h3>Weekly progress tracking</h3>
+        <p>Parents get a short update after every session — no guessing how things are going.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">◷</div>
+        <h3>Flexible scheduling</h3>
+        <p>Evening and weekend slots available to work around school and activities.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SUBJECTS ================= -->
+<section id="subjects" class="subjects-band">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Subjects</div>
+      <h2>From first fractions to competition math</h2>
+      <p>Lessons meet your child at their level and build forward, one concept at a time.</p>
+    </div>
+    <div class="subj-grid">
+      <div class="subj-card">
+        <span class="tag">Foundations</span>
+        <h3>Elementary Math</h3>
+        <ul>
+          <li>Fractions</li>
+          <li>Decimals</li>
+          <li>Word problems</li>
+        </ul>
+      </div>
+      <div class="subj-card">
+        <span class="tag">Bridge</span>
+        <h3>Pre-Algebra</h3>
+        <ul>
+          <li>Variables</li>
+          <li>Equations</li>
+          <li>Functions</li>
+        </ul>
+      </div>
+      <div class="subj-card">
+        <span class="tag">Core</span>
+        <h3>Algebra I</h3>
+        <ul>
+          <li>Linear equations</li>
+          <li>Quadratics</li>
+          <li>Polynomials &amp; exponents</li>
+        </ul>
+      </div>
+      <div class="subj-card">
+        <span class="tag">Core</span>
+        <h3>Geometry</h3>
+        <ul>
+          <li>Proofs</li>
+          <li>Congruence &amp; similarity</li>
+          <li>Area &amp; volume</li>
+        </ul>
+      </div>
+      <div class="subj-card optional">
+        <span class="tag">Optional</span>
+        <h3>Competition Math</h3>
+        <ul>
+          <li>AMC 8</li>
+          <li>AMC 10</li>
+          <li>Problem solving</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HOW IT WORKS ================= -->
+<section id="how">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">How It Works</div>
+      <h2>A simple path from first call to real progress</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="num mono">1</div><h3>Free consultation</h3><p>A short call to understand your child's needs and answer questions.</p></div>
+      <div class="step"><div class="num mono">2</div><h3>Diagnostic assessment</h3><p>A quick, low-pressure check to see exactly where your child stands.</p></div>
+      <div class="step"><div class="num mono">3</div><h3>Personal learning plan</h3><p>A plan built around the specific skills your child needs to build next.</p></div>
+      <div class="step"><div class="num mono">4</div><h3>Weekly tutoring sessions</h3><p>Consistent 1-on-1 sessions, online or in person, at a time that works.</p></div>
+      <div class="step"><div class="num mono">5</div><h3>Progress updates</h3><p>Regular notes so you always know what's improving and what's next.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PRICING ================= -->
+<section id="pricing">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Pricing</div>
+      <h2>Simple, transparent pricing</h2>
+      <p>No hidden fees. Pay per session or save with a package.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="price-card price-hero">
+        <div class="eyebrow" style="color:#9fc0f5;">One-Hour Session</div>
+        <div class="amount">$30<span>/ hour</span></div>
+        <!-- EDIT: replace $45 with your actual starting rate -->
+        <p>Starting rate. Final price may vary by grade level and subject.</p>
+      </div>
+      <div class="price-card">
+        <div class="eyebrow">Packages &amp; Savings</div>
+        <div class="packages">
+          <div class="package">
+            <div class="n mono">4</div>
+            <div class="label">sessions</div>
+          </div>
+          <div class="package">
+            <div class="n mono">8</div>
+            <div class="label">sessions</div>
+          </div>
+          <div class="package">
+            <div class="n mono">12</div>
+            <div class="label">sessions</div>
+          </div>
+        </div>
+        <p style="color:var(--ink-soft); font-size:14px; margin-top:16px;">
+          Ask about package pricing during your free consultation — packages are discounted vs. paying per session.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TESTIMONIALS ================= -->
+<section id="testimonials">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Parent Testimonials</div>
+      <h2>What parents are saying</h2>
+    </div>
+    <div class="testimonial-placeholder">
+      <p class="mono">Testimonials coming soon.</p>
+      <p style="margin-top:8px;">After your first few students, ask parents if they'd be willing to share a short review — it'll go right here.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section id="faq">
+  <div class="wrap" style="max-width:820px;">
+    <div class="section-head">
+      <div class="eyebrow">FAQ</div>
+      <h2>Frequently asked questions</h2>
+    </div>
+    <div>
+      <details class="faq-item" open>
+        <summary>How long are sessions?</summary>
+        <p>Sessions are typically 60 minutes, though shorter sessions can be arranged for younger students.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What ages do you tutor?</summary>
+        <p>I work with students from elementary school through high school, covering everything from basic arithmetic to Algebra, Geometry, and competition math.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Online or in person?</summary>
+        <p>Both are available. Online sessions use a shared virtual whiteboard; in-person sessions can be arranged locally.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What if my child is behind?</summary>
+        <p>That's exactly what the diagnostic assessment is for. We'll identify gaps first and build a plan that starts at the right level, not just the current grade level.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How do payments work?</summary>
+        <p>Payment details are confirmed after your free consultation, with options to pay per session or purchase a discounted package upfront.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="contact-band">
+  <div class="wrap contact-grid">
+    <div class="contact-side">
+      <div class="eyebrow">Get Started</div>
+      <h2>Book your free consultation</h2>
+      <p>Fill out the form and I'll follow up within 24 hours to schedule a short call and answer any questions.</p>
+      <div class="contact-detail">
+        <div>✉️ <a href="mailto:abecaroline9@gmail.com">abecaroline9@gmail.com</a></div>
+        <!-- EDIT: replace with your real email -->
+        <div>📞 (484) 429-1838</div>
+        <!-- EDIT: replace with your real phone number, or remove this line -->
+      </div>
+    </div>
+
+    <form class="contact-form" id="contactForm" action="https://formspree.io/f/xkoleook" method="POST">
+      <div class="form-row">
+        <div class="field">
+          <label for="parentName">Parent name</label>
+          <input type="text" id="parentName" name="Parent Name" required>
+        </div>
+        <div class="field">
+          <label for="studentGrade">Student grade</label>
+          <input type="text" id="studentGrade" name="Student Grade" placeholder="e.g. 8th grade" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="field">
+          <label for="subject">Subject</label>
+          <select id="subject" name="Subject" required>
+            <option value="">Select a subject</option>
+            <option>Elementary Math</option>
+            <option>Pre-Algebra</option>
+            <option>Algebra I</option>
+            <option>Geometry</option>
+            <option>Competition Math</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="schedule">Preferred schedule</label>
+          <input type="text" id="schedule" name="Preferred Schedule" placeholder="e.g. weekday evenings">
+        </div>
+      </div>
+      <div class="field">
+        <label for="goals">Goals</label>
+        <textarea id="goals" name="Goals" placeholder="What would you like your child to improve on?"></textarea>
+      </div>
+      <div class="form-row">
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="Email" required>
+        </div>
+        <div class="field">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="Phone">
+        </div>
+      </div>
+      <!-- Formspree honeypot spam trap -->
+      <input type="text" name="_gotcha" style="display:none">
+      <button type="submit" class="btn-primary" style="width:100%; justify-content:center;">Request Free Consultation</button>
+      <div class="form-status" id="formStatus"></div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-inner">
+    <div class="brand" style="font-size:15px;">
+      <span class="brand-mark" style="width:24px; height:24px; font-size:12px;">∑</span>
+      Rise Math Tutoring
+    </div>
+    <div>© <span id="year"></span> Rise Math Tutoring. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Progressive-enhancement AJAX submit for Formspree (keeps user on page)
+  const form = document.getElementById('contactForm');
+  const status = document.getElementById('formStatus');
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    status.className = 'form-status show';
+    status.textContent = 'Sending…';
+    try{
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if(response.ok){
+        status.textContent = "Thanks! I'll be in touch within 24 hours.";
+        status.className = 'form-status show ok';
+        form.reset();
+      } else {
+        status.textContent = "Something went wrong — please try again or email directly.";
+        status.className = 'form-status show err';
+      }
+    } catch(err){
+      status.textContent = "Something went wrong — please try again or email directly.";
+      status.className = 'form-status show err';
+    }
+  });
+</script>
+
+</body>
+</html>
